@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class rotate : MonoBehaviour
 {
+    public float rotate_speed = 0;
     // Start is called before the first frame update
     void Start()
     { 
@@ -13,6 +14,14 @@ public class rotate : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        this.transform.Rotate(0,1.0f,0);
+        if (Input.GetButton("Fire1"))
+        {
+            rotate_speed = rotate_speed + 0.01f;
+        }
+        else if (rotate_speed >= 0)
+        {
+            rotate_speed = rotate_speed - 0.1f;
+        }
+        this.transform.Rotate(0, rotate_speed, 0);
     }
 }
