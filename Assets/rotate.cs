@@ -16,9 +16,9 @@ public class rotate : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            rotate_speed = rotate_speed + 0.01f;
+            rotate_speed = rotate_speed + 0.1f;
         }
-        else if (rotate_speed >= 0)
+        else if (rotate_speed > 0.1f)
         {
             rotate_speed = rotate_speed - 0.1f;
         }
